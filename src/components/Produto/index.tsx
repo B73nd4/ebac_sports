@@ -1,11 +1,14 @@
-import { Produto as ProdutoType } from '../../App'
 import * as S from './styles'
+import { useDispatch } from 'react-redux'
+import { adicionar } from '../../store/reducers/carrinho'
+import { adicionarOuRemover } from '../../store/reducers/favoritos'
+import { useSelector } from 'react-redux'
 
-type Props = {
-  produto: ProdutoType
-  aoComprar: (produto: ProdutoType) => void
-  favoritar: (produto: ProdutoType) => void
-  estaNosFavoritos: boolean
+export type Produto = {
+  id: number
+  nome: string
+  preco: number
+  imagem: string
 }
 
 export const paraReal = (valor: number) =>
@@ -13,12 +16,15 @@ export const paraReal = (valor: number) =>
     valor
   )
 
-const ProdutoComponent = ({
-  produto,
-  aoComprar,
-  favoritar,
-  estaNosFavoritos
-}: Props) => {
+type Props = {
+  produto: Produto
+}
+
+const ProdutoComponent = ({ produto }: Props) => {
+  const dispatch = useDispatch()
+  const favoritos = useSelector((state: any) => state.favoritos.itens)
+  const estaNosFavoritos = favoritos.some((p: Produto) => p.id === produto.id)
+
   return (
     <S.Produto>
       <S.Capa>
@@ -28,12 +34,15 @@ const ProdutoComponent = ({
       <S.Prices>
         <strong>{paraReal(produto.preco)}</strong>
       </S.Prices>
-      <S.BtnComprar onClick={() => favoritar(produto)} type="button">
+      <S.BtnComprar
+        onClick={() => dispatch(adicionarOuRemover(produto))}
+        type="button"
+      >
         {estaNosFavoritos
           ? '- Remover dos favoritos'
           : '+ Adicionar aos favoritos'}
       </S.BtnComprar>
-      <S.BtnComprar onClick={() => aoComprar(produto)} type="button">
+      <S.BtnComprar onClick={() => dispatch(adicionar(produto))} type="button">
         Adicionar ao carrinho
       </S.BtnComprar>
     </S.Produto>

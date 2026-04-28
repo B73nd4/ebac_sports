@@ -1,0 +1,60 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Chuteira Nike Tiempo",
+      "preco": 299.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Futebol"
+    },
+    {
+      "id": 2,
+      "nome": "Bola Adidas Champions",
+      "preco": 149.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Futebol"
+    },
+    {
+      "id": 3,
+      "nome": "Tênis de Corrida Asics",
+      "preco": 399.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Corrida"
+    },
+    {
+      "id": 4,
+      "nome": "Camiseta Dry-Fit",
+      "preco": 89.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 5,
+      "nome": "Shorts Esportivo Under Armour",
+      "preco": 119.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 6,
+      "nome": "Luvas de Boxe Everlast",
+      "preco": 189.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Boxe"
+    },
+    {
+      "id": 7,
+      "nome": "Raquete de Tênis Wilson",
+      "preco": 459.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Tênis"
+    },
+    {
+      "id": 8,
+      "nome": "Mochila Esportiva Puma",
+      "preco": 229.99,
+      "imagem": "https://via.placeholder.com/300",
+      "categoria": "Acessórios"
+    }
+  ]
+}
